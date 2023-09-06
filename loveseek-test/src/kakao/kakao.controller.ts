@@ -8,8 +8,11 @@ export class KakaoController {
 
   @Get('callback')
   kakaoSuccess(@Query('code') authCode: string, @Res() res: Response) {
-    console.log(authCode);
-
     res.redirect(`loveseek://kakaoSuccess?code=${authCode}`);
+  }
+
+  @Get('test')
+  test() {
+    return 'test';
   }
 }
